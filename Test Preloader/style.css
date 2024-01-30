@@ -1,0 +1,36 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Preloader */
+#loader {
+    width: 100%;
+    height: 100vh;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: top .3s;
+    /* display: none; */
+}
+
+.loader-text {
+    text-align: center;
+}
+
+/* Content */
+#content {
+    display: none;
+}
+
+.image-line {
+    width: 50%;
+    margin: 4vh auto;
+    display: block;
+}
