@@ -1,0 +1,11 @@
+html {
+    /* Гладкая прокрутка для якорных ссылок через id */
+    scroll-behavior: smooth; 
+}
+
+@font-face {
+    font-family: "name";
+    src: url('...') format("woff2");
+    /* Заменяет незагруженный шрифт на запасной практически моментально */
+    font-display: swap;
+}
