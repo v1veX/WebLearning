@@ -7,16 +7,33 @@
     color: var(--color-light);
     background-color: var(--color-dark);
     border-radius: var(--border-radius-large);
+    overflow-x: hidden;
+
+    @include tablet {
+        padding: 30px 30px 46px;
+        row-gap: 46px;
+    }
 
     &__slider {
         --reviewsSliderSlideWidth: 606px;
+
+        @include tablet {
+            --reviewsSliderSlideWidth: 330px;
+        }
 
         &-list {
             display: flex;
             column-gap: 50px;
             scroll-snap-type: x mandatory;
             overflow-x: scroll;
-            margin-left: calc(var(--reviewsSliderSlideWidth) / 2 * -1);
+
+            @include tablet-above {
+                margin-left: calc(var(--reviewsSliderSlideWidth) / 2 * -1);
+            }
+
+            @include tablet {
+                column-gap: 30px;
+            }
         }
 
         &-item {
