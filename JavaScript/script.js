@@ -108,3 +108,72 @@ const b2 = 100
 const res = a1 ?? b1 // если левая часть от ?? равна null или undefined, то переменной присвоится значение справа от ??
 
 // Урок 6
+alert('Whasup , nigga!')
+const promptInput = prompt('How old are you?') // если пользователь введет что-либо, то это значение запишется в переменную, а если нажмет Отмену, то присвоится null
+const isReady = confirm('Are you ready?') // возвращает true/false
+
+//switch-case (стандартный для Си-подобных языков)
+const ageS = 56
+switch (ageS) {
+    case 0: {
+        console.log('SSSSSSSSS')
+        break
+    }
+    case 10: {
+        console.log('UFFFF')
+        break
+    }
+    default: {
+        console.log(ageS)
+    }
+}
+
+// Урок 7
+
+// while, do while, for - стандартные для Си-подобных языков
+
+// то же и с break и continue
+
+// Урок 8
+
+// Функции
+// Все стандартно, за исключением того, что в параметрах функций можно устанавливать значения по умолчанию
+
+// Урок 9
+
+// Function Expression
+let logHello = function() {
+    console.log('Hello World!')
+}
+
+// Arrow Function
+logHello = (name) => {
+    console.log(`Hi, ${name}! I am an Arrow Function!`)
+}
+
+const sum = (a, b) => a + b
+console.log(sum(228, 1337))
+
+// Callbacks (функции, передаваемые в качестве параметров другой функции)
+
+const logMessage = (actionBefore, actionAfter) => {
+    actionBefore()
+    console.log('Hello')
+    actionAfter()
+}
+
+const fn1 = () => console.log('Action before...')
+const fn2 = () => console.log('Action after...')
+
+logMessage(fn1, fn2)
+
+// Функции могут быть возвращены другой функцией
+
+const validate = (hasAccess) => {
+    hasAccess
+    ? () => console.log('Access!')
+    : () => console.log('No access :(')
+}
+
+const logMes = validate(true)
+logMes()
