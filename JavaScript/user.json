@@ -1,0 +1,12 @@
+{
+    "name": "Vladimir",
+    "age": 19,
+    "city": "Vladivostok",
+    "address": {
+        "street": "Derzhavina str., 21, room 701",
+        "zipcode": 123456
+    },
+    "todos": ["eat", "sleep", "code"],
+    "hasCar": false,
+    "yacht": null
+}
