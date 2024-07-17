@@ -196,12 +196,19 @@
     --header-height: 90px;
  }
 
+#content-wrapper {
+  position: relative;
+  left: -100%;
+  opacity: 0;
+  transition-duration: .3s;
+}
+
  body {
     font-family: var(--font-family-base);
     color: var(--color-light-gray);
     font-size: 16px;
     line-height: 1.75;
-    background-color: var(--color-dark);
+    background-color: var(--color-dark-alt);
  }
 
  a, button, input, textarea, svg * {
@@ -521,6 +528,10 @@ input[type=number] {
     border-color: var(--color-light-gray);
 }
 
+.motivation-item:nth-child(odd) {
+  background-color: var(--color-dark);
+}
+
 .motivation-item:nth-child(even) {
   background-color: var(--color-dark-alt);
 }
@@ -690,6 +701,7 @@ input[type=number] {
 .location {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  background-color: var(--color-dark);
 }
 
 .location-map-image {
@@ -864,6 +876,7 @@ input[type=number] {
 
 .footer {
   --footerLogoWidth: 20.77%;
+  background-color: var(--color-dark);
 }
 
 .footer-main {
