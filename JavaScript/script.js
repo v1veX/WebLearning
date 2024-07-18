@@ -14,7 +14,7 @@ console.log(message)
 // const - переменная, значение которой нелья изменить после ее определения (как и во всех языках собственно)
 
 // 'use strict' - включает строгий режим, ограничивающий использование хреновых моментов (например, не дает объявить переменную
-// без слов var, let, const)
+// без слов var, let, const), а также отключает устаревший функционал
 
 // переменная не должна начинаться с цифры. 1myVar - неправильно
 
@@ -24,10 +24,10 @@ console.log(message)
 // Урок 3
 
 // string
-const name = 'ABOBA'
+const nameA = 'ABOBA'
 const greeting = "Hello Mr."
 
-const message2 = `${greeting} ${name}!` // так выглядят f-строки
+const message2 = `${greeting} ${nameA}!` // так выглядят f-строки
 console.log(message2)
 
 // number
