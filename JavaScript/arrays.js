@@ -93,9 +93,13 @@ const usersFormatted = users.map(({name, age, city}) => {
 console.log(usersFormatted)
 // map позволяет возвращать отформатированный массив. На каждой итерации метода происходит требуемое нам форматирование
 
-const cities = users.reduce((accumulator, element, index, array) => {
+const cities = users.reduce(
+(accumulator, element, index, array) => {
     return `${accumulator} ${element.city}`
-}, 'Города:')
+}, 
+'Города:'
+)
+
 console.log(cities)
 // reduce - перебор массива с накоплением какого-л значения
 // второй аргумент задает начальное значение 
