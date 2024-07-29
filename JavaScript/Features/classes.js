@@ -74,3 +74,5 @@ class JavaScriptLearner extends Student {
         console.log('И учу JavaScript...');
     }
 }
+
+console.log(firstStudent instanceof Student); // проверка экземпляром какого класса является объект

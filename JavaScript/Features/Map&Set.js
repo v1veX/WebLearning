@@ -60,6 +60,6 @@ const set = new Set([1, 2, 2, 2, 3])
 set.add(4) // добавление в Set
 
 // также применимы методы delete, has, clear и св-во size
-// а также keys, values и entries, причем key == value, а entries это [key, value
+// а также keys, values и entries, причем key == value, а entries это [key, value]
 // Это сделано для обратной совместимости с Map
 // перебор такой же как и у Map
