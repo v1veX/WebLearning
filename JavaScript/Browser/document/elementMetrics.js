@@ -26,7 +26,7 @@ let a = elem.offsetParent; // предок элемента, который ис
 
 // browser window metrics
 
-// ширину и высоту можно взять через clientWidth/Height
+// ширину и высоту можно взять через clientWidth/Height из document.documentElement
 
 // высота ВСЕГО документа
 let scrollHeight = Math.max(

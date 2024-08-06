@@ -1,51 +1,27 @@
-let currentImageWidth;
-let currentImageNumber = 0;
+let currImgNum = 0;
 
-function setGallerySizes(onresize = false) {
-    if (onresize) {
-        let a = document.querySelector('.gallery-wrapper').clientWidth - currentImageWidth;
-        if (a === 0) return;
-    }
+function switchGalleryPrev() {
+    let imagesContainer = document.querySelector('.gallery-images-container');
+    
+    if (currImgNum == 0) return;
 
-    let imageBlocks = document.querySelectorAll('.gallery-image');
-    currentImageWidth = document.querySelector('.gallery-wrapper').clientWidth;
-    for (let block of imageBlocks) {
-        block.style.width = `${currentImageWidth}px`;
-    }
-
-    document.querySelector('.gallery-images-container').style.translate = `-${currentImageWidth * currentImageNumber}px`;
+    imagesContainer.style.left = `-${100 * --currImgNum}%`;
 }
+
+function switchGalleryNext() {
+    let imagesContainer = document.querySelector('.gallery-images-container');
+    let imagesCount = imagesContainer.children.length;
+
+    if (currImgNum == imagesCount - 1) return;
+
+    imagesContainer.style.left = `-${100 * ++currImgNum}%`;
+}
+
+
+document.querySelector('#gallery-prev').onclick = switchGalleryPrev;
+document.querySelector('#gallery-next').onclick = switchGalleryNext;
 
 let imageBlocks = document.querySelectorAll('.gallery-image');
 for (let block of imageBlocks) {
     block.style.backgroundImage = `url(images/${block.dataset.imageSrc})`;
 }
-setGallerySizes();
-
-function switchGalleryLeft() {
-    let imagesContainer = document.querySelector('.gallery-images-container');
-
-    if (currentImageNumber == 0) {
-        currentImageNumber = document.querySelectorAll('.gallery-image').length;
-    };
-
-    imagesContainer.style.translate = `-${currentImageWidth * --currentImageNumber}px`;
-}
-
-function switchGalleryRight() {
-    let imagesContainer = document.querySelector('.gallery-images-container');
-
-    if (currentImageNumber == document.querySelectorAll('.gallery-image').length - 1) {
-        currentImageNumber = -1;
-    };
-
-    imagesContainer.style.translate = `-${currentImageWidth * ++currentImageNumber}px`;
-}
-
-
-document.querySelector('#gallery-prev').onclick = switchGalleryLeft;
-document.querySelector('#gallery-next').onclick = switchGalleryRight;
-
-window.addEventListener('resize', () => {
-    setGallerySizes(true);
-});
