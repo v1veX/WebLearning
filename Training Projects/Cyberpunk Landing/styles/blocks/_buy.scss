@@ -1,0 +1,48 @@
+.buy {
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+
+        @include tablet {
+            grid-template-columns: 330px auto;
+        }
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+    &__banner {
+        background-image: url('../images/buy/banner.jpg');
+        background-size: cover;
+
+        @include mobile {
+            height: 200px;
+        }
+    }
+
+    &__content {
+        max-width: 624px;
+        padding-block: 70px;
+        color: var(--color-white);
+
+        @include tablet {
+            max-width: 100%;
+            padding-right: var(--container-padding-x);
+        }
+
+        @include mobile {
+            padding-top: 40px;
+            padding-inline: 12px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__bundle {
+        margin-bottom: 70px;
+    }
+}

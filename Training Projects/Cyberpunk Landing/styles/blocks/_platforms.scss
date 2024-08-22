@@ -1,0 +1,18 @@
+.platforms {
+    &__title {
+        margin-bottom: 25px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        align-items: center;
+        justify-content: space-between;
+        row-gap: 50px;
+        max-width: 320px;
+
+        @include mobile {
+            max-width: 100%;
+        }
+    }
+}

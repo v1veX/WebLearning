@@ -1,0 +1,53 @@
+@mixin reset-link {
+    color: inherit;
+
+    &, &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin reset-button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+@mixin flex-center($isInline: false) {
+    @if $isInline {
+        display: inline-flex;
+    } @else {
+        display: flex;
+    }
+
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
+@mixin full-width {
+    position: absolute;
+    margin-inline: -12px;
+}
+
+@mixin clip-path {
+    clip-path: polygon(
+        var(--clip-path-offset) 0,
+        100% 0,
+        100% calc(100% - var(--clip-path-offset)),
+        calc(100% - var(--clip-path-offset)) 100%,
+        0 100%,
+        0 var(--clip-path-offset)
+    );
+}

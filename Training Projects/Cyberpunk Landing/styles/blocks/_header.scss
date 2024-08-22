@@ -1,0 +1,46 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 20px;
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+        }
+    }
+    
+    &__soc1als {
+        &-list {
+            display: flex;
+            column-gap: 40px;
+
+            @include mobile {
+                column-gap: 30px;
+            }
+        }
+
+        &-link {
+            display: block;
+            width: 30px;
+            height: 30px;
+            color: var(--color-black);
+
+            @include hover {
+                color: var(--color-grey);
+            }
+
+            @include mobile {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}

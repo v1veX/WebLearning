@@ -1,0 +1,45 @@
+.footer {
+    &__body {
+        background-color: var(--color-white);
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: 13px;
+
+        @include tablet-s {
+            flex-direction: column;
+            row-gap: 50px;
+        }
+    }
+
+    &__logos, &__links {
+        display: flex;
+        column-gap: 32px;
+        row-gap: 25px;
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__links {
+        row-gap: 15px;
+    }
+
+    &__link {
+        @include hover {
+            color: var(--color-grey);
+        }
+    }
+
+    &__extra {
+        padding-block: 13px;
+        font-size: 12px;
+        text-align: center;
+        color: var(--color-white);
+    }
+}

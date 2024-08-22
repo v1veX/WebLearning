@@ -1,0 +1,84 @@
+.promo {
+    background-color: var(--color-yellow);
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 70px;
+        background-image: url('../images/decor/black-yellow.png');
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 32px;
+        padding-block: 70px;
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+    &__image-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 25px;
+
+        @include mobile {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__image {
+        height: auto;
+    }
+
+    &__collab {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        @include tablet {
+            flex-direction: column;
+        }
+
+        @include mobile {
+            flex-direction: row;
+            gap: 13px;
+        }
+
+        &-logo {
+            @include mobile {
+                height: 44px;
+                width: auto;
+            }
+        }
+
+        &-decor {
+            @include mobile {
+                height: 12px;
+                width: auto;
+            }
+        }
+    }
+
+    &__title, &__description {
+        margin-bottom: 25px;
+    }
+
+    &__features-list {
+        margin-bottom: 40px;
+    }
+
+    &__features-item {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.screenshot-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    border: 1px dashed var(--color-grey);
+    cursor: pointer;
+    transition-duration: var(--transition-duration);
+
+    @include hover {
+        border-color: var(--color-yellow);
+    }
+
+    &__title {
+        text-decoration: underline;
+    }
+
+    &__subtitle {
+        font-size: 12px;
+
+        @include tablet {
+            display: none;
+        }
+    }
+}

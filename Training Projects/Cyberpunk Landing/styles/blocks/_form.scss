@@ -1,0 +1,37 @@
+.form {
+    &__input {
+        height: 35px;
+        width: 100%;
+        padding-bottom: 13px;
+        margin-bottom: 35px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid var(--color-grey);
+        color: inherit;
+
+        @include hover {
+            border-color: var(--color-yellow);
+        }
+
+        &:focus-visible {
+            outline: 0;
+            border-color: var(--color-yellow);
+        }
+
+        &::placeholder {
+            color: inherit;
+        }
+    }
+
+    &__screenshot-label {
+        margin-bottom: 35px;
+    }
+
+    &__button {
+        margin-bottom: 15px;
+    }
+
+    &__personal-label {
+        font-size: 12px;
+    }
+}
