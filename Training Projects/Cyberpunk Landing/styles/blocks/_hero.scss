@@ -1,17 +1,35 @@
 .hero {
     height: 1000px;
-    background-image: url('../images/hero/1_desktop.jpg');
     background-size: cover;
     background-position: center;
+    transition-duration: 1s;
 
     @include mobile {
-        height: 763px;
-        background-size: auto 130%;
-        background-position: center top;
+        height: 713px;
     }
 
-    @include mobile-s {
-        background-image: url('../images/hero/1_mobile.jpg');
+    &--1 {
+        background-image: url('../images/hero/1_desktop.jpg');
+
+        @include mobile-s {
+            background-image: url('../images/hero/1_mobile.jpg');
+        }
+    }
+
+    &--2 {
+        background-image: url('../images/hero/2_desktop.jpg');
+
+        @include mobile-s {
+            background-image: url('../images/hero/2_mobile.jpg');
+        }
+    }
+
+    &--3 {
+        background-image: url('../images/hero/3_desktop.jpg');
+
+        @include mobile-s {
+            background-image: url('../images/hero/3_mobile.jpg');
+        }
     }
 
     &__inner {

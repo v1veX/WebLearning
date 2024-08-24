@@ -356,20 +356,37 @@ h3 {
 
 .hero {
   height: 1000px;
-  background-image: url("../images/hero/1_desktop.jpg");
   background-size: cover;
   background-position: center;
+  transition-duration: 1s;
 }
 @media (max-width: 767px) {
   .hero {
-    height: 763px;
-    background-size: auto 130%;
-    background-position: center top;
+    height: 713px;
   }
 }
+.hero--1 {
+  background-image: url("../images/hero/1_desktop.jpg");
+}
 @media (max-width: 320px) {
-  .hero {
+  .hero--1 {
     background-image: url("../images/hero/1_mobile.jpg");
+  }
+}
+.hero--2 {
+  background-image: url("../images/hero/2_desktop.jpg");
+}
+@media (max-width: 320px) {
+  .hero--2 {
+    background-image: url("../images/hero/2_mobile.jpg");
+  }
+}
+.hero--3 {
+  background-image: url("../images/hero/3_desktop.jpg");
+}
+@media (max-width: 320px) {
+  .hero--3 {
+    background-image: url("../images/hero/3_mobile.jpg");
   }
 }
 .hero__inner {
