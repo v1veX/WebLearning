@@ -1,69 +1,142 @@
-const postsListElement = document.querySelector('.posts-list');
+let posts = [];
+
+function createPostElement(author, title, body, likes, id) {
+    const titleFormatted = title ? title : 'Заголовок отсутствует';
+
+    const postElementHTML = 
+    `
+    <li class="posts__item">
+        <article class="post" id="post-${id}">
+            <header class="post__header post__inner">
+                <div class="post__author-name">${author}</div>
+            </header>
+            <div class="post__body post__inner">
+                <h3 class="post__title ${title ? '' : 'visually-hidden'}">
+                    ${titleFormatted}
+                </h3>
+                <p class="post__text">
+                    ${body}
+                </p>
+            </div>
+            <footer class="post__footer post__inner">
+                <span class="post__likes-counter">Лайки: ${likes}</span>
+                <button type="button" class="post__like-button" data-js-like-button data-post-id="${id}" data-current-likes="${likes}">👍</button>
+            </footer>
+        </article>
+    </li>
+    `;
+
+    return postElementHTML;
+}
+
+function updateLikesOnPost(postId, likes) {
+    const postElement = document.querySelector(`#post-${postId}`);
+    const likesElement = postElement.querySelector('.post__likes-counter');
+    const likeButtonElement = postElement.querySelector('[data-js-like-button]');
+
+    likesElement.textContent = `Лайки: ${likes}`;
+    likeButtonElement.dataset.currentLikes = likes;
+}
 
 async function getPosts() {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const url = 'http://localhost:3000/posts';
 
-    if (!response.ok) throw new Error('Что-то пошло не так :(');
+    const response = await fetch(url);
 
-    const posts = await response.json();
-
-    return posts;
+    posts = await response.json();
 }
 
-async function drawPosts() {
-    try {
-        const posts = await getPosts();
+function showError() {
+    const postsListElement = document.querySelector('.posts__list');
+    postsListElement.innerHTML = '';
 
-        const postsItemsHTML = posts
-            .map(({ id, title, body }) => {
-                return `
-                    <li class="posts-item">
-                        <article class="posts-article post" id="post-${id}" data-post-id="${id}">
-                            <h3 class="post-title">${title}</h3>
-                            <p class="post-text">${body}</p>
-                        </article>
-                    </li>
-                `;
-            })
-            .join('');
-    
-        postsListElement.insertAdjacentHTML('afterbegin', postsItemsHTML);
-    }
-    catch (error) {
-        const errorHTML = `<li><p>${error.message}</p></li>`;
-        postsListElement.insertAdjacentHTML('afterbegin', errorHTML);
-        return;
-    }
+    const errorMessageElement = document.createElement('div');
+    errorMessageElement.textContent = 'Произошла ошибка! Проверьте подключение к сети.'
 
-    
+    postsListElement.append(errorMessageElement);
 }
 
-async function getComments(postId) {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`);
+function renderPosts() {
+    const postsListElement = document.querySelector('.posts__list');
 
-    if (!response.ok) throw new Error('Что-то пошло не так :(');
+    postsListElement.innerHTML = '';
 
-    const comments = await response.json();
+    posts.forEach(post => {
+        const { ownerName, title, body, likes, id } = post; 
 
-    return comments;
-} 
+        const postElement = createPostElement(ownerName, title, body, likes, id);
 
-async function logComments(postId) {
-    try {
-        const comments = await getComments(postId);
-        console.log(comments);
-    }
-    catch (error) {
-        console.error(error.message);
+        postsListElement.insertAdjacentHTML('afterbegin', postElement);
+    });
+}
+
+function bindLikesEvents() {
+    document.addEventListener('click', event => {
+        const likeButtonElement = event.target.closest('[data-js-like-button]');
+
+        if (!likeButtonElement) return;
+
+        const postId = likeButtonElement.dataset.postId;
+        const newLikes = Number(likeButtonElement.dataset.currentLikes) + 1;
+
+        fetch(`http://localhost:3000/posts/${postId}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify({ 'likes': newLikes})
+        })
+        
+        updateLikesOnPost(postId, newLikes);
+    });
+}
+
+function clearPostForm() {
+    const postFormElement = document.querySelector('#post-form');
+
+    for (const formElement of postFormElement.elements) {
+        formElement.value = '';
     }
 }
 
-postsListElement.addEventListener('click', event => {
-    const target = event.target.closest('[data-post-id]');
-    if (!target) return;
+function bindPostFormEvents() {
+    const postFormElement = document.querySelector('#post-form');
 
-    const postId = target.dataset.postId;
-    logComments(postId);
-});
+    postFormElement.addEventListener('submit', event => {
+        event.preventDefault();
 
-drawPosts();
+        const newPost = {
+            title: postFormElement.title.value,
+            body: postFormElement.body.value,
+            likes: 0,
+            ownerId: '0',
+            ownerName: postFormElement.ownerName.value,
+        };
+
+        const newPostJSON = JSON.stringify(newPost);
+
+        fetch(`http://localhost:3000/posts`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: newPostJSON
+        })
+        .then(response => response.json())
+        .then(post => {
+            posts.push(post);
+        })
+        .then(() => renderPosts())
+        .then(() => clearPostForm());
+    });
+}
+
+function start() {
+    getPosts()
+        .then(() => renderPosts())
+        .catch(() => showError());
+    bindLikesEvents();
+    bindPostFormEvents();
+}
+
+start();
