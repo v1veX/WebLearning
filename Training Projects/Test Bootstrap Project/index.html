@@ -48,11 +48,11 @@
     </header>
     <main>
         <section class="hero container">
-            <div class="row align-items-center">
-                <div class="col-7">
+            <div class="hero-items row align-items-center">
+                <div class="hero-title col-7">
                     <h1>Flowers make our lives better</h1>
                 </div>
-                <div class="col-5">
+                <div class="hero-image col-5">
                     <img
                     src="https://avatars.mds.yandex.net/i?id=2fffdae317d78b661c844117c0b773e5_l-4936815-images-thumbs&n=13"
                     alt="a bouquet of beautiful flowers"
@@ -64,7 +64,7 @@
         <section class="our-flowers container">
             <h2 class="text-center">Learn more about our flowers</h2>
             <div class="flowers-row row pt-5 pb-5">
-                <div class="col">
+                <div class="col-md-6 col-lg-4">
                     <div class="card">
                         <img
                             src="https://avatars.mds.yandex.net/i?id=096f62109f931422628b95514ab436a4c3d4cb0b-4569626-images-thumbs&n=13" class="card-img-top"
@@ -78,7 +78,7 @@
                         </div>
                       </div>
                 </div>
-                <div class="col">
+                <div class="col-md-6 col-lg-4">
                     <div class="card">
                         <img
                             src="https://avatars.mds.yandex.net/i?id=a1e50d72e273fb92dae2b6252c42e3d3602e83767e306ab1-5896019-images-thumbs&n=13" class="card-img-top"
@@ -92,7 +92,7 @@
                         </div>
                       </div>
                 </div>
-                <div class="col">
+                <div class="col-md-6 col-lg-4">
                     <div class="card">
                         <img
                             src="https://avatars.mds.yandex.net/i?id=8af5a22b7ef8fb9c8da1e5b6c58c280d2fb5c1f6-4274999-images-thumbs&n=13" class="card-img-top"
@@ -131,8 +131,8 @@
                         src="https://i.pinimg.com/originals/c6/65/2a/c6652a6ae8cebb6e09746404f2792885.jpg"
                         class="d-block"
                         alt="Woman picking bouquet"
-                        width="100%"
-                        height="100%"
+                        width="1296"
+                        height="600"
                     >
                   </div>
                   <div class="carousel-item">
@@ -140,8 +140,8 @@
                         src="https://avatars.mds.yandex.net/i?id=282b06094d22f06fb42fb9b94d5c9e46_l-10809692-images-thumbs&n=13"
                         class="d-block"
                         alt="Man picking bouquet"
-                        width="100%"
-                        height="100%"
+                        width="1296"
+                        height="600"
                     >
                   </div>
                   <div class="carousel-item">
@@ -149,8 +149,8 @@
                         src="https://pos-center.ru/img/journal/kak-otkryt-cvetochnyy-magazin-poshagovaya-instrukciya-i-cennye-sovety-8.jpg"
                         class="d-block"
                         alt="Happy customer and our shop assistant"
-                        width="100%"
-                        height="100%"
+                        width="1296"
+                        height="600"
                     >
                   </div>
                 </div>
@@ -164,7 +164,37 @@
                 </button>
               </div>
         </section>
+        <section class="container">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                        placeholder="Enter your email"
+                    >
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="exampleInputPassword1"
+                        placeholder="Enter your password"
+                    >
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </section>
     </main>
+    <footer>
+        <div class="container">
+            <p class="footer-text">&copy Made by v1veX</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

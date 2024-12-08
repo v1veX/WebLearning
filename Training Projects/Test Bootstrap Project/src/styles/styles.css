@@ -24,11 +24,82 @@ section {
 }
 
 .carousel {
-  width: 70%;
-  height: 400px;
+  height: 600px;
   margin-inline: auto;
 }
 
 .carousel-inner {
   height: 100%;
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 70px;
+  transition-property: background-color, opacity;
+  transition-duration: 0.3s;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  background-color: #0000007d;
+}
+
+footer {
+  padding-block: 20px;
+  background-color: #f8f9fa;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (width < 1200px) {
+  .card img {
+    height: 200px;
+  }
+
+  .carousel {
+    height: 450px;
+  }
+}
+
+@media (width < 992px) {
+  .flowers-row {
+    justify-content: center;
+    row-gap: 20px;
+  }
+
+  .carousel {
+    height: 400px;
+  }
+}
+
+@media (width < 768px) {
+  .hero-items {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-title, .hero-image {
+    width: 100%;
+  }
+
+  .hero-title {
+    padding-block: 25px;
+  }
+
+  .card img {
+    height: 250px;
+  }
+
+  .carousel {
+    height: 300px;
+  }
 }
