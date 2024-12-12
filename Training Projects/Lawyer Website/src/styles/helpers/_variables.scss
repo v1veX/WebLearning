@@ -1,0 +1,73 @@
+$color-black: #010101;
+$color-black-semi: #181818;
+$color-black-light: #222222;
+$color-brown: #372626;
+$color-blue: #4F8FF0;
+$color-gray: #8C8C8C;
+$color-gray-semi: #E6E6E6;
+$color-gray-light: #F7F7F7;
+$color-white: #FFFFFF;
+
+
+$top-menu-height: 52px;
+
+$main-menu-pt-lg: 20px;
+$main-menu-pt-sm: 16px;
+$main-menu-pb-lg: 28px;
+$main-menu-pb-sm: 19px;
+
+$mobile-menu-padding-inline: 26px;
+$mobile-menu-padding-block: 50px;
+
+$container-width: 1320px;
+$container-padding-inline-lg: 69px;
+$container-padding-inline-sm: 24px;
+
+$section-padding-block-lg: 80px;
+$section-padding-block-md: 60px;
+$section-padding-block-sm: 40px;
+
+$services-grid-gap-lg: 38px;
+$services-grid-gap-sm: 24px;
+
+$service-card-pt-lg: 50px;
+$service-card-pt-md: 30px;
+$service-card-pt-sm: 24px;
+$service-card-pb-lg: 50px;
+$service-card-pb-md: 30px;
+$service-card-pb-sm: 24px;
+
+$font-size-56: 56px;
+$font-size-50: 50px;
+$font-size-30: 30px;
+$font-size-28: 28px;
+$font-size-24: 24px;
+$font-size-20: 20px;
+$font-size-18: 18px;
+$font-size-16: 16px;
+$font-size-14: 14px;
+
+:root {
+    --color-primary: #{$color-blue};
+    --color-secondary: #{$color-gray-semi};
+    --color-text: #{$color-black-light};
+    --color-text-light: #{$color-white};
+    --color-bg: #{$color-gray-light};
+    --color-bg-accent: #{$color-black};
+
+    --border-primary: 2px solid var(--color-primary);
+    --border-secondary: 2px solid var(--color-secondary);
+
+    --container-width: #{$container-width};
+    --container-padding-inline: #{$container-padding-inline-lg};
+
+    // Это локальные переменные и их надо вынести в блоки
+
+    // --main-menu-pt: #{$main-menu-pt-lg};
+    // --main-menu-pb: #{$main-menu-pb-lg};
+    // --container-padding-inline: #{$container-padding-inline-lg};
+    // --section-padding-block: #{$section-padding-block-lg};
+    // --services-grid-gap: #{$services-grid-gap-lg};
+    // --service-card-pt: #{$service-card-pt-lg};
+    // --service-card-pb: #{$service-card-pb-lg};
+}

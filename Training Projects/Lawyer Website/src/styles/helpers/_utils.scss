@@ -1,0 +1,40 @@
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.desktop-hidden {
+    @include tablet-above {
+        display: none;
+    }
+}
+
+.tablet-hidden {
+    @include tablet {
+        display: none;
+    }
+}
+
+.mobile-hidden {
+    @include mobile {
+        display: none;
+    }
+}
+
+.container {
+    max-width: calc(var(--container-width) + var(--container-padding-inline) * 2);
+    padding-inline: var(--container-padding-inline);
+    margin-inline: auto;
+
+    @include mobile {
+        --container-padding-inline: #{$container-padding-inline-sm};
+    }
+}
