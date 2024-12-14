@@ -1,0 +1,38 @@
+.bottom-header {
+    --bottom-header-pt: #{$bottom-header-pt-lg};
+    --bottom-header-pb: #{$bottom-header-pb-lg};
+
+    padding-top: var(--bottom-header-pt);
+    padding-bottom: var(--bottom-header-pb);
+    background-color: var(--color-bg-accent-half);
+
+    @include tablet {
+        --bottom-header-pt: #{$bottom-header-pt-sm};
+        --bottom-header-pb: #{$bottom-header-pb-sm};
+    }
+    
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo-icon {
+        display: block;
+
+        @include tablet {
+            width: 217px;
+            height: 47px;
+        }
+    }
+
+    &__burger-button {
+        color: var(--color-text-light);
+
+        @include transition(color);
+
+        @include hover {
+            color: var(--color-primary);
+        }
+    }
+}

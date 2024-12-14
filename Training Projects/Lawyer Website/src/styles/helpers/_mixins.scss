@@ -1,0 +1,23 @@
+@mixin hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+    @media (hover: none) {
+        &:active {
+            @content;
+        }
+    }
+}
+
+@mixin transition($properties, $duration: $transition-duration) {
+    transition-property: $properties;
+    transition-duration: $duration;
+}
+
+@mixin container($width, $padding-inline) {
+    max-width: calc(#{$width} + #{$padding-inline} * 2);
+    padding-inline: $padding-inline;
+    margin-inline: auto;
+}

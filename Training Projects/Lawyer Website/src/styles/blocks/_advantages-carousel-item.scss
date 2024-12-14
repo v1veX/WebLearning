@@ -1,0 +1,99 @@
+.advantages-carousel-item {
+    height: 820px;
+
+    @include tablet {
+        height: 529px;
+    }
+
+    @include mobile {
+        height: 486px;
+    }
+
+    &__image-wrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    &__image {
+        height: 100%;
+        width: auto;
+
+        @include desktop-above {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-text-light);
+        text-align: center;
+    }
+
+    &__content-inner {
+        @include container(1090px, var(--container-padding-inline));
+
+        @include mobile {
+            --container-padding-inline: #{$container-padding-inline-sm};
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+    }
+
+    &__title-top {
+        font-size: $font-size-30;
+        font-weight: 300;
+        line-height: 150%;
+
+        @include tablet {
+            font-size: $font-size-24;
+        }
+
+        @include mobile {
+            font-size: $font-size-18;
+        }
+    }
+
+    &__title-bottom {
+        font-size: $font-size-56;
+        font-weight: 600;
+        line-height: 150%;
+        color: var(--color-primary);
+
+        @include tablet {
+            font-size: $font-size-50;
+        }
+
+        @include mobile {
+            font-size: $font-size-30;
+        }
+    }
+
+    &__text {
+        font-size: $font-size-20;
+        line-height: 120%;
+
+        @include tablet {
+            font-size: $font-size-18;
+        }
+
+        @include mobile {
+            font-size: $font-size-16;
+        }
+    }
+}

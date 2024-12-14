@@ -1,4 +1,5 @@
 $color-black: #010101;
+$color-black-half: rgba(1, 1, 1, 0.76);
 $color-black-semi: #181818;
 $color-black-light: #222222;
 $color-brown: #372626;
@@ -11,10 +12,10 @@ $color-white: #FFFFFF;
 
 $top-menu-height: 52px;
 
-$main-menu-pt-lg: 20px;
-$main-menu-pt-sm: 16px;
-$main-menu-pb-lg: 28px;
-$main-menu-pb-sm: 19px;
+$bottom-header-pt-lg: 20px;
+$bottom-header-pt-sm: 16px;
+$bottom-header-pb-lg: 28px;
+$bottom-header-pb-sm: 19px;
 
 $mobile-menu-padding-inline: 26px;
 $mobile-menu-padding-block: 50px;
@@ -47,6 +48,8 @@ $font-size-18: 18px;
 $font-size-16: 16px;
 $font-size-14: 14px;
 
+$transition-duration: 0.3s;
+
 :root {
     --color-primary: #{$color-blue};
     --color-secondary: #{$color-gray-semi};
@@ -54,6 +57,7 @@ $font-size-14: 14px;
     --color-text-light: #{$color-white};
     --color-bg: #{$color-gray-light};
     --color-bg-accent: #{$color-black};
+    --color-bg-accent-half: #{$color-black-half};
 
     --border-primary: 2px solid var(--color-primary);
     --border-secondary: 2px solid var(--color-secondary);
@@ -61,11 +65,11 @@ $font-size-14: 14px;
     --container-width: #{$container-width};
     --container-padding-inline: #{$container-padding-inline-lg};
 
+    --transition-duration: #{$transition-duration};
+
     // Это локальные переменные и их надо вынести в блоки
 
-    // --main-menu-pt: #{$main-menu-pt-lg};
-    // --main-menu-pb: #{$main-menu-pb-lg};
-    // --container-padding-inline: #{$container-padding-inline-lg};
+    // 
     // --section-padding-block: #{$section-padding-block-lg};
     // --services-grid-gap: #{$services-grid-gap-lg};
     // --service-card-pt: #{$service-card-pt-lg};

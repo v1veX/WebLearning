@@ -30,10 +30,8 @@
 }
 
 .container {
-    max-width: calc(var(--container-width) + var(--container-padding-inline) * 2);
-    padding-inline: var(--container-padding-inline);
-    margin-inline: auto;
-
+    @include container(var(--container-width), var(--container-padding-inline));
+    
     @include mobile {
         --container-padding-inline: #{$container-padding-inline-sm};
     }

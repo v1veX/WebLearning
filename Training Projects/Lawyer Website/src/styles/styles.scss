@@ -1,4 +1,10 @@
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/carousel';
+
 @import './helpers/reset';
+@import './helpers/fonts';
 @import './helpers/variables';
 @import './helpers/media';
 @import './helpers/mixins';
@@ -6,5 +12,12 @@
 @import './helpers/utils';
 
 
+@import './blocks/buttons';
+
 @import './blocks/header';
-@import './blocks/top-menu';
+@import './blocks/top-header';
+@import './blocks/bottom-header';
+@import './blocks/header-nav';
+@import './blocks/hero';
+@import './blocks/advantages-carousel';
+@import './blocks/advantages-carousel-item';
