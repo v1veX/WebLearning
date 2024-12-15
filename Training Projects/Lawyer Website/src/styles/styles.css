@@ -416,10 +416,14 @@ svg * {
 body {
   font-family: "Nunito-Sans", sans-serif;
   font-weight: 400;
+  color: var(--color-text);
+  line-height: 120%;
 }
 
 a {
+  display: inline-block;
   text-decoration: none;
+  color: inherit;
 }
 
 button {
@@ -442,19 +446,19 @@ button {
 
 @media (width > 1060px) {
   .desktop-hidden {
-    display: none;
+    display: none !important;
   }
 }
 
 @media (width < 1061px) {
   .tablet-hidden {
-    display: none;
+    display: none !important;
   }
 }
 
 @media (width < 768px) {
   .mobile-hidden {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -469,6 +473,48 @@ button {
   }
 }
 
+.button--primary, .button--secondary {
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.button--primary {
+  background-color: var(--color-primary);
+  border: var(--border-primary);
+  color: var(--color-text-light);
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+}
+@media (hover: hover) {
+  .button--primary:hover {
+    background-color: var(--color-text-light);
+    color: var(--color-primary);
+  }
+}
+@media (hover: none) {
+  .button--primary:active {
+    background-color: var(--color-text-light);
+    color: var(--color-primary);
+  }
+}
+.button--secondary {
+  background-color: var(--color-secondary);
+  border: var(--border-secondary);
+  color: var(--color-text);
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+@media (hover: hover) {
+  .button--secondary:hover {
+    background-color: var(--color-text-light);
+  }
+}
+@media (hover: none) {
+  .button--secondary:active {
+    background-color: var(--color-text-light);
+  }
+}
 .button--svg-only {
   padding: 0;
   background-color: transparent;
@@ -591,6 +637,67 @@ button {
   padding-top: 52px;
 }
 
+.advantages-carousel {
+  background-color: #372626;
+}
+.advantages-carousel__controls {
+  position: absolute;
+  bottom: 36px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (width < 1061px) {
+  .advantages-carousel__controls {
+    bottom: 24px;
+  }
+}
+.advantages-carousel__indicators {
+  position: static;
+  display: flex;
+  align-items: flex-end;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  height: 40px;
+  margin: 0;
+}
+.advantages-carousel__indicator {
+  width: 4px;
+  height: 24px;
+  margin: 0;
+  background-color: var(--color-secondary);
+  opacity: 1;
+  transition-property: height, background-color;
+  transition-duration: 0.3s;
+}
+.advantages-carousel__indicator.active {
+  height: 40px;
+  background-color: var(--color-primary);
+}
+.advantages-carousel__nav {
+  display: flex;
+  align-items: center;
+  color: var(--color-text-light);
+}
+.advantages-carousel__prev, .advantages-carousel__next {
+  padding: 8px;
+  color: inherit;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+@media (hover: hover) {
+  .advantages-carousel__prev:hover, .advantages-carousel__next:hover {
+    color: var(--color-primary);
+  }
+}
+@media (hover: none) {
+  .advantages-carousel__prev:active, .advantages-carousel__next:active {
+    color: var(--color-primary);
+  }
+}
+
 .advantages-carousel-item {
   height: 820px;
 }
@@ -648,6 +755,8 @@ button {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 .advantages-carousel-item__title-top {
   font-size: 30px;
@@ -682,7 +791,6 @@ button {
 }
 .advantages-carousel-item__text {
   font-size: 20px;
-  line-height: 120%;
 }
 @media (width < 1061px) {
   .advantages-carousel-item__text {
@@ -693,4 +801,7 @@ button {
   .advantages-carousel-item__text {
     font-size: 16px;
   }
+}
+.advantages-carousel-item__text:not(:last-child) {
+  margin-bottom: 48px;
 }/*# sourceMappingURL=styles.css.map */

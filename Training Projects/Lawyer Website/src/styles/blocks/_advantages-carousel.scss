@@ -1,5 +1,58 @@
 .advantages-carousel {
-    // &__inner {
-    //     height: 820px;
-    // }
+    background-color: $color-brown;
+
+    &__controls {
+        position: absolute;
+        bottom: 36px;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include tablet {
+            bottom: 24px;
+        }
+    }
+
+    &__indicators {
+        position: static;
+        display: flex;
+        align-items: flex-end;
+        column-gap: 8px;
+        height: 40px;
+        margin: 0;
+    }
+
+    &__indicator {
+        width: 4px;
+        height: 24px;
+        margin: 0;
+        background-color: var(--color-secondary);
+        opacity: 1;
+
+        @include transition((height, background-color));
+
+        &.active {
+            height: 40px;
+            background-color: var(--color-primary);
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        color: var(--color-text-light);
+    }
+
+    &__prev, &__next {
+        padding: 8px;
+        color: inherit;
+
+        @include transition(color);
+
+        @include hover {
+            color: var(--color-primary);
+        }
+    }
 }

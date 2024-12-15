@@ -13,19 +13,19 @@
 
 .desktop-hidden {
     @include tablet-above {
-        display: none;
+        display: none !important;
     }
 }
 
 .tablet-hidden {
     @include tablet {
-        display: none;
+        display: none !important;
     }
 }
 
 .mobile-hidden {
     @include mobile {
-        display: none;
+        display: none !important;
     }
 }
 
