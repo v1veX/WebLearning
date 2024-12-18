@@ -1,0 +1,43 @@
+.services {
+    &__title {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    &__description {
+        @include container(920px, 0px);
+
+        margin-bottom: 48px;
+        text-align: center;
+
+        @include mobile {
+            margin-bottom: 24px;
+            font-size: $font-size-14;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: $services-grid-gap-lg;
+        row-gap: $services-grid-gap-lg;
+        margin-bottom: 48px;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: $services-grid-gap-sm;
+            row-gap: $services-grid-gap-sm;
+        }
+
+        @include mobile {
+            display: flex;
+            margin-bottom: 30px;
+            overflow: auto;
+        }
+    }
+
+    &__all {
+        display: flex;
+        justify-content: center;
+    }
+}

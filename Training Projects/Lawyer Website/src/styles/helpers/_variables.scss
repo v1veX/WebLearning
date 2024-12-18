@@ -34,9 +34,11 @@ $services-grid-gap-sm: 24px;
 $service-card-pt-lg: 50px;
 $service-card-pt-md: 30px;
 $service-card-pt-sm: 24px;
-$service-card-pb-lg: 50px;
-$service-card-pb-md: 30px;
-$service-card-pb-sm: 24px;
+$service-card-pb-lg: 59px;
+$service-card-pb-md: 40px;
+$service-card-pb-sm: 32px;
+$service-card-pi-lg: 32px;
+$service-card-pi-sm: 16px;
 
 $font-size-56: 56px;
 $font-size-50: 50px;
@@ -70,7 +72,7 @@ $transition-duration: 0.3s;
     // Это локальные переменные и их надо вынести в блоки
 
     // 
-    // --section-padding-block: #{$section-padding-block-lg};
+    // 
     // --services-grid-gap: #{$services-grid-gap-lg};
     // --service-card-pt: #{$service-card-pt-lg};
     // --service-card-pb: #{$service-card-pb-lg};

@@ -36,3 +36,17 @@
         --containerPaddingInline: #{$container-padding-inline-sm};
     }
 }
+
+.section:not(.first) {
+    --sectionPaddingBlock: #{$section-padding-block-lg};
+
+    padding-block: var(--sectionPaddingBlock);
+
+    @include tablet {
+        --sectionPaddingBlock: #{$section-padding-block-md};
+    }
+
+    @include mobile {
+        --sectionPaddingBlock: #{$section-padding-block-sm};
+    }
+}

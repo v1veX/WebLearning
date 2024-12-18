@@ -45,7 +45,7 @@
         @include container(1090px, $container-padding-inline-lg);
 
         @include mobile {
-            --container-padding-inline: #{$container-padding-inline-sm};
+            --containerPaddingInline: #{$container-padding-inline-sm};
         }
     }
 

@@ -1,0 +1,61 @@
+.service-card {
+    --cardTextColor: var(--color-text);
+    --cardIconColor: var(--color-primary);
+
+    height: 100%;
+    padding-top: $service-card-pt-lg;
+    padding-bottom: $service-card-pb-lg;
+    padding-inline: $service-card-pi-lg;
+    background-color: var(--color-text-light);
+    color: var(--cardTextColor);
+
+    @include transition(background-color);
+
+    @include hover {
+        background-color: var(--color-primary);
+        --cardTextColor: var(--color-text-light);
+        --cardIconColor: var(--color-text-light);
+    }
+
+    @include tablet {
+        padding-top: $service-card-pt-md;
+        padding-bottom: $service-card-pb-md;
+    }
+
+    @include mobile {
+        padding-top: $service-card-pt-sm;
+        padding-bottom: $service-card-pb-sm;
+        padding-inline: $service-card-pi-sm;
+        min-width: 250px;
+    }
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+        color: var(--cardIconColor);
+
+        & svg {
+            display: block;
+
+            @include transition(color);
+        }
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        font-size: $font-size-20;
+        font-weight: 800;
+        text-align: center;
+        line-height: 150%;
+
+        @include transition(color);
+    }
+
+    &__text {
+        font-size: $font-size-14;
+        text-align: center;
+
+        @include transition(color);
+    }
+}
