@@ -31,7 +31,7 @@
         background-color: var(--color-secondary);
         opacity: 1;
 
-        @include transition((height, background-color));
+        @include transition((height, background-color), $carousel-transition-duration);
 
         &.active {
             height: 40px;

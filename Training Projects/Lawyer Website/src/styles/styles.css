@@ -463,13 +463,15 @@ button {
 }
 
 .container {
-  max-width: calc(var(--container-width) + var(--container-padding-inline) * 2);
-  padding-inline: var(--container-padding-inline);
+  --containerWidth: 1320px;
+  --containerPaddingInline: 69px;
+  max-width: calc(var(--containerWidth) + var(--containerPaddingInline) * 2);
+  padding-inline: var(--containerPaddingInline);
   margin-inline: auto;
 }
 @media (width < 768px) {
   .container {
-    --container-padding-inline: 24px;
+    --containerPaddingInline: 24px;
   }
 }
 
@@ -670,7 +672,7 @@ button {
   background-color: var(--color-secondary);
   opacity: 1;
   transition-property: height, background-color;
-  transition-duration: 0.3s;
+  transition-duration: 0.6s;
 }
 .advantages-carousel__indicator.active {
   height: 40px;
@@ -742,8 +744,10 @@ button {
   text-align: center;
 }
 .advantages-carousel-item__content-inner {
-  max-width: calc(1090px + var(--container-padding-inline) * 2);
-  padding-inline: var(--container-padding-inline);
+  --containerWidth: 1090px;
+  --containerPaddingInline: 69px;
+  max-width: calc(var(--containerWidth) + var(--containerPaddingInline) * 2);
+  padding-inline: var(--containerPaddingInline);
   margin-inline: auto;
 }
 @media (width < 768px) {

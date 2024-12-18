@@ -17,7 +17,10 @@
 }
 
 @mixin container($width, $padding-inline) {
-    max-width: calc(#{$width} + #{$padding-inline} * 2);
-    padding-inline: $padding-inline;
+    --containerWidth: #{$width};
+    --containerPaddingInline: #{$padding-inline};
+
+    max-width: calc(var(--containerWidth) + var(--containerPaddingInline) * 2);
+    padding-inline: var(--containerPaddingInline);
     margin-inline: auto;
 }

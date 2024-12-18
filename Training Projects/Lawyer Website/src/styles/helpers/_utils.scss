@@ -30,9 +30,9 @@
 }
 
 .container {
-    @include container(var(--container-width), var(--container-padding-inline));
+    @include container($container-width, $container-padding-inline-lg);
     
     @include mobile {
-        --container-padding-inline: #{$container-padding-inline-sm};
+        --containerPaddingInline: #{$container-padding-inline-sm};
     }
 }
